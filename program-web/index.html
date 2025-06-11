@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,44 +13,72 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </head>
+
 <body class="bg-gray-100 h-screen flex items-center justify-center">
 
     <div id="app-container" class="w-full h-full max-w-md mx-auto bg-white shadow-xl overflow-hidden flex flex-col">
 
-        <div id="splashScreen" class="screen active flex-col items-center justify-center bg-gradient-to-br from-indigo-500 to-purple-600 text-white h-full">
+        <div id="splashScreen"
+            class="screen active flex-col items-center justify-center bg-gradient-to-br from-indigo-500 to-purple-600 text-white h-full">
             <img src="icon.png" alt="Logo MoneyMinds" class="loading-icon w-24 h-24 mb-6">
             <h1 class="text-4xl font-bold">MoneyMinds</h1>
             <p class="mt-2 text-lg">Educação financeira para jovens</p>
             <div class="w-3/4 h-2 bg-white/30 rounded-full mt-8 overflow-hidden">
-                <div id="splashProgressBar" class="h-full bg-white transition-all duration-500" style="width: 0%;"></div>
+                <div id="splashProgressBar" class="h-full bg-white transition-all duration-500" style="width: 0%;">
+                </div>
             </div>
         </div>
 
         <div id="loginScreen" class="screen flex-col justify-center p-8 bg-gray-50 h-full">
             <div class="text-center mb-10">
-                <svg class="w-16 h-16 mx-auto mb-4 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <svg class="w-16 h-16 mx-auto mb-4 text-indigo-600" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
                 <h2 class="text-3xl font-bold text-indigo-700">Bem-vindo(a) de volta!</h2>
                 <p class="text-gray-600 mt-1">Acesse sua conta MoneyMinds.</p>
             </div>
-            <input type="email" id="loginEmail" placeholder="Seu e-mail" class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none" value="jovem@exemplo.com">
-            <input type="password" id="loginPassword" placeholder="Sua senha" class="w-full p-3 mb-6 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none" value="123456">
+            <input type="email" id="loginEmail" placeholder="Seu e-mail"
+                class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none"
+                value="jovem@exemplo.com">
+            <input type="password" id="loginPassword" placeholder="Sua senha"
+                class="w-full p-3 mb-6 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none"
+                value="123456">
             <div class="g-recaptcha mb-4" data-sitekey="6LdaFl0rAAAAACBnvbk87Qo8mG-gggUJ-SEKOhJm"></div>
 
-            <button onclick="login()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold p-3 rounded-lg mb-4 transition duration-150 ease-in-out">Entrar</button>
-            <button onclick="navigateTo('cadastroScreen')" class="w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold p-3 rounded-lg mb-4 transition duration-150 ease-in-out">Cadastre-se</button>
-            
-        <div class="relative flex py-4 items-center">
-            <div class="flex-grow border-t border-gray-300"></div>
-            <span class="flex-shrink mx-4 text-gray-500 text-sm">OU</span>
-        <div class="flex-grow border-t border-gray-300"></div>
-        </div>
+            <button onclick="login()"
+                class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold p-3 rounded-lg mb-4 transition duration-150 ease-in-out">Entrar</button>
+            <button onclick="navigateTo('cadastroScreen')"
+                class="w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold p-3 rounded-lg mb-4 transition duration-150 ease-in-out">Cadastre-se</button>
 
-        <button onclick="signInWithGoogle()" class="w-full bg-white border border-gray-300 text-gray-700 font-semibold p-3 rounded-lg flex items-center justify-center hover:bg-gray-50 transition duration-150 ease-in-out">
-    
-         <svg class="w-5 h-5 mr-3" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.222,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.574l6.19,5.238C42.022,35.244,44,30.038,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path></svg>
-        Entrar com Google
-        </button>
-            <button onclick="openModal('forgotPasswordModal')" class="text-sm text-indigo-600 hover:text-indigo-800 text-center w-full">Esqueci a senha</button>
+            <div class="relative flex py-4 items-center">
+                <div class="flex-grow border-t border-gray-300"></div>
+                <span class="flex-shrink mx-4 text-gray-500 text-sm">OU</span>
+                <div class="flex-grow border-t border-gray-300"></div>
+            </div>
+
+            <button onclick="signInWithGoogle()"
+                class="w-full bg-white border border-gray-300 text-gray-700 font-semibold p-3 rounded-lg flex items-center justify-center hover:bg-gray-50 transition duration-150 ease-in-out">
+
+                <svg class="w-5 h-5 mr-3" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#FFC107"
+                        d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z">
+                    </path>
+                    <path fill="#FF3D00"
+                        d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z">
+                    </path>
+                    <path fill="#4CAF50"
+                        d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.222,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z">
+                    </path>
+                    <path fill="#1976D2"
+                        d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.574l6.19,5.238C42.022,35.244,44,30.038,44,24C44,22.659,43.862,21.35,43.611,20.083z">
+                    </path>
+                </svg>
+                Entrar com Google
+            </button>
+            <button onclick="openModal('forgotPasswordModal')"
+                class="text-sm text-indigo-600 hover:text-indigo-800 text-center w-full">Esqueci a senha</button>
         </div>
 
         <div id="cadastroScreen" class="screen flex-col p-6 bg-gray-50 h-full overflow-y-auto custom-scrollbar">
@@ -57,79 +86,101 @@
                 <i data-feather="arrow-left" class="inline-block"></i> Voltar
             </button>
             <h2 class="text-2xl font-bold text-indigo-700 mb-6 text-center">Crie sua Conta</h2>
-            <input type="text" id="cadastroNome" placeholder="Nome" class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
-            <input type="number" id="cadastroIdade" placeholder="Idade" class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
-            <input type="email" id="cadastroEmail" placeholder="E-mail" class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
-            <input type="password" id="cadastroSenha" placeholder="Senha" class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
-            <select id="cadastroTipoUsuario" onchange="toggleCodigoEscola()" class="w-full p-3 mb-4 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-indigo-500">
+            <input type="text" id="cadastroNome" placeholder="Nome"
+                class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
+            <input type="number" id="cadastroIdade" placeholder="Idade"
+                class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
+            <input type="email" id="cadastroEmail" placeholder="E-mail"
+                class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
+            <input type="password" id="cadastroSenha" placeholder="Senha"
+                class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
+            <select id="cadastroTipoUsuario" onchange="toggleCodigoEscola()"
+                class="w-full p-3 mb-4 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-indigo-500">
                 <option value="jovem">Jovem</option>
                 <option value="professor">Professor</option>
             </select>
-            <input type="text" id="cadastroCodigoEscola" placeholder="Código da Escola" class="w-full p-3 mb-6 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 hidden">
-            <button onclick="cadastrar()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold p-3 rounded-lg transition duration-150 ease-in-out">Cadastrar</button>
+            <input type="text" id="cadastroCodigoEscola" placeholder="Código da Escola"
+                class="w-full p-3 mb-6 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 hidden">
+            <button onclick="cadastrar()"
+                class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold p-3 rounded-lg transition duration-150 ease-in-out">Cadastrar</button>
         </div>
 
         <div id="homeJovemScreen" class="screen flex-col h-full">
             <header class="bg-indigo-600 text-white p-5 shadow-md">
                 <h1 class="text-xl font-semibold" id="jovemGreeting">Olá, [Nome]!</h1>
-                <p class="text-sm">Seu saldo atual: <span id="homeSaldoAtual" class="font-bold text-green-300">R$ 0,00</span></p>
+                <p class="text-sm">Seu saldo atual: <span id="homeSaldoAtual" class="font-bold text-green-300">R$
+                        0,00</span></p>
             </header>
             <main class="flex-grow p-5 overflow-y-auto custom-scrollbar bg-gray-50">
-                <div class="bg-white p-4 rounded-xl shadow-lg mb-5 cursor-pointer hover:shadow-xl transition-shadow" onclick="navigateTo('metasScreen')">
+                <div class="bg-white p-4 rounded-xl shadow-lg mb-5 cursor-pointer hover:shadow-xl transition-shadow"
+                    onclick="navigateTo('metasScreen')">
                     <h3 class="font-semibold text-lg text-indigo-700 mb-2">Minhas Metas</h3>
                     <div id="homeMetaCardContent" class="flex items-center">
-                <div id="homeMetaProgressContainer" class="progress-bar-circular mr-4" style="--progress-percent: 0;">
-                <div class="progress-fill"></div>
-                <span id="homeMetaProgressValue" class="progress-value">0%</span>
-                </div>
-                <div>
-                    <p id="homeMetaNome" class="text-gray-700">Nenhuma meta ativa</p>
-                    <p id="homeMetaValores" class="text-sm text-gray-500">R$ 0,00 / R$ 0,00</p>
-                    </div>
-                
-                    <p id="homeMetaEmpty" class="text-center text-gray-500 hidden mt-2">Nenhuma meta ativa no momento. <br> <span class="text-indigo-600 font-semibold cursor-pointer" onclick="navigateTo('addMetaScreen')">Adicione uma!</span></p>
-    
-                    </div>
-                
-                
-                
-                <div class="bg-white p-4 rounded-xl shadow-lg mb-5 cursor-pointer hover:shadow-xl transition-shadow" onclick="navigateTo('transacoesScreen')">
-                    <h3 class="font-semibold text-lg text-purple-700 mb-3">Últimas Transações</h3>
-                    <ul id="homeTransacoesList" class="space-y-2">
+                        <div id="homeMetaProgressContainer" class="progress-bar-circular mr-4"
+                            style="--progress-percent: 0;">
+                            <div class="progress-fill"></div>
+                            <span id="homeMetaProgressValue" class="progress-value">0%</span>
+                        </div>
+                        <div>
+                            <p id="homeMetaNome" class="text-gray-700">Nenhuma meta ativa</p>
+                            <p id="homeMetaValores" class="text-sm text-gray-500">R$ 0,00 / R$ 0,00</p>
+                        </div>
 
-                    <p id="homeTransacoesEmpty" class="text-center text-gray-500">Nenhuma transação recente.</p>
-                    </ul>
-                </div>
-                <div class="bg-gradient-to-r from-yellow-400 to-orange-500 text-white p-4 rounded-xl shadow-lg mb-5 cursor-pointer hover:shadow-xl transition-shadow" onclick="navigateTo('desafiosJovemScreen')">
-                    <h3 class="font-semibold text-lg mb-1">Desafio do Dia!</h3>
-                    <p class="text-sm mb-2">Economize R$ 5 hoje e ganhe 50 pontos!</p>
-                    <button class="bg-white text-orange-500 font-semibold px-3 py-1 rounded-md text-sm hover:bg-orange-50 transition-colors">Ver desafio</button>
-                </div>
-                 <div class="bg-white p-4 rounded-xl shadow-lg mb-5 cursor-pointer hover:shadow-xl transition-shadow" onclick="navigateTo('simuladorScreen')">
-                    <h3 class="font-semibold text-lg text-teal-700 mb-2">Simulador de Investimentos</h3>
-                    <p class="text-sm text-gray-600">Veja como seu dinheiro pode render!</p>
-                </div>
+                        <p id="homeMetaEmpty" class="text-center text-gray-500 hidden mt-2">Nenhuma meta ativa no
+                            momento. <br> <span class="text-indigo-600 font-semibold cursor-pointer"
+                                onclick="navigateTo('addMetaScreen')">Adicione uma!</span></p>
+
+                    </div>
+
+
+
+                    <div class="bg-white p-4 rounded-xl shadow-lg mb-5 cursor-pointer hover:shadow-xl transition-shadow"
+                        onclick="navigateTo('transacoesScreen')">
+                        <h3 class="font-semibold text-lg text-purple-700 mb-3">Últimas Transações</h3>
+                        <ul id="homeTransacoesList" class="space-y-2">
+
+                            <p id="homeTransacoesEmpty" class="text-center text-gray-500">Nenhuma transação recente.</p>
+                        </ul>
+                    </div>
+                    <div class="bg-gradient-to-r from-yellow-400 to-orange-500 text-white p-4 rounded-xl shadow-lg mb-5 cursor-pointer hover:shadow-xl transition-shadow"
+                        onclick="navigateTo('desafiosJovemScreen')">
+                        <h3 class="font-semibold text-lg mb-1">Desafio do Dia!</h3>
+                        <p class="text-sm mb-2">Economize R$ 5 hoje e ganhe 50 pontos!</p>
+                        <button
+                            class="bg-white text-orange-500 font-semibold px-3 py-1 rounded-md text-sm hover:bg-orange-50 transition-colors">Ver
+                            desafio</button>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-lg mb-5 cursor-pointer hover:shadow-xl transition-shadow"
+                        onclick="navigateTo('simuladorScreen')">
+                        <h3 class="font-semibold text-lg text-teal-700 mb-2">Simulador de Investimentos</h3>
+                        <p class="text-sm text-gray-600">Veja como seu dinheiro pode render!</p>
+                    </div>
             </main>
             <nav class="bottom-nav grid grid-cols-5 gap-1 bg-white p-3 border-t border-gray-200">
-                <button onclick="navigateTo('homeJovemScreen')" class="flex flex-col items-center text-indigo-600 hover:text-indigo-800 transition-colors">
+                <button onclick="navigateTo('homeJovemScreen')"
+                    class="flex flex-col items-center text-indigo-600 hover:text-indigo-800 transition-colors">
                     <i data-feather="home"></i><span class="text-xs mt-1">Home</span>
                 </button>
-                <button onclick="navigateTo('metasScreen')" class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                <button onclick="navigateTo('metasScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
                     <i data-feather="target"></i><span class="text-xs mt-1">Metas</span>
                 </button>
-                <button onclick="navigateTo('transacoesScreen')" class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                <button onclick="navigateTo('transacoesScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
                     <i data-feather="list"></i><span class="text-xs mt-1">Transações</span>
                 </button>
-                <button onclick="navigateTo('desafiosJovemScreen')" class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                <button onclick="navigateTo('desafiosJovemScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
                     <i data-feather="award"></i><span class="text-xs mt-1">Desafios</span>
                 </button>
-                <button onclick="navigateTo('perfilScreen')" class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                <button onclick="navigateTo('perfilScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
                     <i data-feather="user"></i><span class="text-xs mt-1">Perfil</span>
                 </button>
-                </nav>
-            </div>
-        
-    
+            </nav>
+        </div>
+
+
 
 
         <div id="homeProfessorScreen" class="screen flex-col h-full">
@@ -138,7 +189,8 @@
                 <p>Turmas Ativas: 3</p>
             </header>
             <main class="flex-grow p-5 overflow-y-auto custom-scrollbar bg-gray-50">
-                <button onclick="navigateTo('desafiosProfessorScreen', { action: 'criar' })" class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold p-3 rounded-lg mb-6 transition duration-150 ease-in-out flex items-center justify-center">
+                <button onclick="navigateTo('desafiosProfessorScreen', { action: 'criar' })"
+                    class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold p-3 rounded-lg mb-6 transition duration-150 ease-in-out flex items-center justify-center">
                     <i data-feather="plus-circle" class="mr-2"></i> Criar Novo Desafio
                 </button>
                 <h2 class="text-lg font-semibold text-gray-700 mb-3">Progresso das Turmas</h2>
@@ -156,7 +208,7 @@
                         <div class="bg-purple-500 h-2.5 rounded-full" style="width: 60%"></div>
                     </div>
                 </div>
-                 <div class="bg-white p-4 rounded-xl shadow-lg">
+                <div class="bg-white p-4 rounded-xl shadow-lg">
                     <h3 class="font-semibold text-md text-purple-700 mb-2">Turma 9º Ano C</h3>
                     <p class="text-sm text-gray-600 mb-1">Progresso médio dos desafios: 88%</p>
                     <div class="w-full bg-gray-200 rounded-full h-2.5">
@@ -164,99 +216,120 @@
                     </div>
                 </div>
             </main>
-             <nav class="bottom-nav grid grid-cols-3 gap-1 bg-white p-3 border-t border-gray-200">
-                <button onclick="navigateTo('homeProfessorScreen')" class="flex flex-col items-center text-purple-600 hover:text-purple-800 transition-colors">
+            <nav class="bottom-nav grid grid-cols-3 gap-1 bg-white p-3 border-t border-gray-200">
+                <button onclick="navigateTo('homeProfessorScreen')"
+                    class="flex flex-col items-center text-purple-600 hover:text-purple-800 transition-colors">
                     <i data-feather="home"></i><span class="text-xs mt-1">Home</span>
                 </button>
-                <button onclick="navigateTo('desafiosProfessorScreen')" class="flex flex-col items-center text-gray-500 hover:text-purple-600 transition-colors">
+                <button onclick="navigateTo('desafiosProfessorScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-purple-600 transition-colors">
                     <i data-feather="edit-3"></i><span class="text-xs mt-1">Gerenciar Desafios</span>
                 </button>
-                <button onclick="navigateTo('perfilScreen')" class="flex flex-col items-center text-gray-500 hover:text-purple-600 transition-colors">
+                <button onclick="navigateTo('perfilScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-purple-600 transition-colors">
                     <i data-feather="user"></i><span class="text-xs mt-1">Perfil</span>
                 </button>
             </nav>
         </div>
 
-        <div id="metasScreen" class="screen flex-col h-full"> 
+        <div id="metasScreen" class="screen flex-col h-full">
             <header class="bg-indigo-600 text-white p-5 flex items-center justify-between shadow-md">
-        <button onclick="goBack()" class="text-white"><i data-feather="arrow-left"></i></button>
-        <h1 class="text-xl font-semibold">Minhas Metas</h1>
-        <div></div> 
-        </header>
-        <main class="flex-grow p-5 overflow-y-auto custom-scrollbar bg-gray-50">
-        <div id="metasList" class="space-y-4">
-           
+                <button onclick="goBack()" class="text-white"><i data-feather="arrow-left"></i></button>
+                <h1 class="text-xl font-semibold">Minhas Metas</h1>
+                <div></div>
+            </header>
+            <main class="flex-grow p-5 overflow-y-auto custom-scrollbar bg-gray-50">
+                <div id="metasList" class="space-y-4">
+
+                </div>
+            </main>
+
+            <button onclick="navigateTo('addMetaScreen')"
+                class="fixed bottom-20 right-5 bg-pink-500 hover:bg-pink-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition duration-150 ease-in-out">
+                <i data-feather="plus" class="w-7 h-7"></i>
+            </button>
+
+
+            <nav class="bottom-nav grid grid-cols-5 gap-1 bg-white p-3 border-t border-gray-200">
+                <button onclick="navigateTo('homeJovemScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                    <i data-feather="home"></i><span class="text-xs mt-1">Home</span>
+                </button>
+                <button onclick="navigateTo('metasScreen')"
+                    class="flex flex-col items-center text-indigo-600 hover:text-indigo-800 transition-colors">
+                    <!-- Cor ativa -->
+                    <i data-feather="target"></i><span class="text-xs mt-1">Metas</span>
+                </button>
+                <button onclick="navigateTo('transacoesScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                    <i data-feather="list"></i><span class="text-xs mt-1">Transações</span>
+                </button>
+                <button onclick="navigateTo('desafiosJovemScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                    <i data-feather="award"></i><span class="text-xs mt-1">Desafios</span>
+                </button>
+                <button onclick="navigateTo('perfilScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                    <i data-feather="user"></i><span class="text-xs mt-1">Perfil</span>
+                </button>
+            </nav>
         </div>
-        </main>
 
-        <button onclick="navigateTo('addMetaScreen')" class="fixed bottom-20 right-5 bg-pink-500 hover:bg-pink-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition duration-150 ease-in-out">
-            <i data-feather="plus" class="w-7 h-7"></i>
-        </button>
 
-    
-    <nav class="bottom-nav grid grid-cols-5 gap-1 bg-white p-3 border-t border-gray-200">
-        <button onclick="navigateTo('homeJovemScreen')" class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
-            <i data-feather="home"></i><span class="text-xs mt-1">Home</span>
-        </button>
-        <button onclick="navigateTo('metasScreen')" class="flex flex-col items-center text-indigo-600 hover:text-indigo-800 transition-colors"> <!-- Cor ativa -->
-            <i data-feather="target"></i><span class="text-xs mt-1">Metas</span>
-        </button>
-        <button onclick="navigateTo('transacoesScreen')" class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
-            <i data-feather="list"></i><span class="text-xs mt-1">Transações</span>
-        </button>
-        <button onclick="navigateTo('desafiosJovemScreen')" class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
-            <i data-feather="award"></i><span class="text-xs mt-1">Desafios</span>
-        </button>
-        <button onclick="navigateTo('perfilScreen')" class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
-            <i data-feather="user"></i><span class="text-xs mt-1">Perfil</span>
-        </button>
-    </nav>
-</div>
-
-        
         <div id="addMetaScreen" class="screen flex-col h-full bg-gray-50">
-    <header class="bg-pink-600 text-white p-5 flex items-center justify-between shadow-md">
-        <button onclick="goBack()" class="text-white"><i data-feather="arrow-left"></i></button>
-        <h1 class="text-xl font-semibold">Adicionar Nova Meta</h1>
-        <div></div> 
-    </header>
-    <main class="flex-grow p-5 overflow-y-auto custom-scrollbar space-y-5">
-        <div>
-            <label for="metaNome" class="block text-sm font-medium text-gray-700 mb-1">Nome da Meta</label>
-            <input type="text" id="metaNome" placeholder="Ex: Comprar um Headset Gamer" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 outline-none">
-        </div>
-        <div>
-            <label for="metaValorTotal" class="block text-sm font-medium text-gray-700 mb-1">Valor Total da Meta (R$)</label>
-            <input type="number" id="metaValorTotal" placeholder="300.00" step="0.01" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 outline-none">
-        </div>
-        <div>
-            <label for="metaValorPoupado" class="block text-sm font-medium text-gray-700 mb-1">Valor Já Poupado (R$) - Opcional</label>
-            <input type="number" id="metaValorPoupado" placeholder="0.00" step="0.01" value="0" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 outline-none">
-        </div>
-        <div>
-            <label for="metaDataLimite" class="block text-sm font-medium text-gray-700 mb-1">Data Limite (Opcional)</label>
-            <input type="date" id="metaDataLimite" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 outline-none">
-        </div>
-        
-        <button onclick="addNovaMeta()" class="w-full bg-pink-500 hover:bg-pink-600 text-white font-semibold p-3.5 rounded-lg transition duration-150 ease-in-out mt-2">
-            Salvar Meta
-        </button>
-    </main>
+            <header class="bg-pink-600 text-white p-5 flex items-center justify-between shadow-md">
+                <button onclick="goBack()" class="text-white"><i data-feather="arrow-left"></i></button>
+                <h1 class="text-xl font-semibold">Adicionar Nova Meta</h1>
+                <div></div>
+            </header>
+            <main class="flex-grow p-5 overflow-y-auto custom-scrollbar space-y-5">
+                <div>
+                    <label for="metaNome" class="block text-sm font-medium text-gray-700 mb-1">Nome da Meta</label>
+                    <input type="text" id="metaNome" placeholder="Ex: Comprar um Headset Gamer"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 outline-none">
+                </div>
+                <div>
+                    <label for="metaValorTotal" class="block text-sm font-medium text-gray-700 mb-1">Valor Total da Meta
+                        (R$)</label>
+                    <input type="number" id="metaValorTotal" placeholder="300.00" step="0.01"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 outline-none">
+                </div>
+                <div>
+                    <label for="metaValorPoupado" class="block text-sm font-medium text-gray-700 mb-1">Valor Já Poupado
+                        (R$) - Opcional</label>
+                    <input type="number" id="metaValorPoupado" placeholder="0.00" step="0.01" value="0"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 outline-none">
+                </div>
+                <div>
+                    <label for="metaDataLimite" class="block text-sm font-medium text-gray-700 mb-1">Data Limite
+                        (Opcional)</label>
+                    <input type="date" id="metaDataLimite"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 outline-none">
+                </div>
+
+                <button onclick="addNovaMeta()"
+                    class="w-full bg-pink-500 hover:bg-pink-600 text-white font-semibold p-3.5 rounded-lg transition duration-150 ease-in-out mt-2">
+                    Salvar Meta
+                </button>
+            </main>
         </div>
 
         <div id="transacoesScreen" class="screen flex-col h-full">
             <header class="bg-purple-600 text-white p-5 flex items-center justify-between shadow-md">
                 <button onclick="goBack()" class="text-white"><i data-feather="arrow-left"></i></button>
                 <h1 class="text-xl font-semibold">Minhas Transações</h1>
-                <div></div> </header>
+                <div></div>
+            </header>
             <div class="p-4 bg-gray-100">
                 <div class="flex space-x-2 mb-4">
-                    <select class="w-1/2 p-2 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-purple-500 text-sm">
+                    <select
+                        class="w-1/2 p-2 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-purple-500 text-sm">
                         <option value="">Tipo (Todos)</option>
                         <option value="gasto">Gasto</option>
                         <option value="recebimento">Recebimento</option>
                     </select>
-                    <select class="w-1/2 p-2 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-purple-500 text-sm">
+                    <select
+                        class="w-1/2 p-2 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-purple-500 text-sm">
                         <option value="">Categoria (Todas)</option>
                         <option value="alimentacao">🍔 Alimentação</option>
                         <option value="mesada">💰 Mesada</option>
@@ -267,26 +340,32 @@
             </div>
             <main class="flex-grow p-4 pt-0 overflow-y-auto custom-scrollbar bg-gray-100 space-y-3">
                 <div id="transacoesList" class="space-y-3">
-        
+
                 </div>
             </main>
-            <button onclick="navigateTo('addTransacaoScreen')" class="fixed bottom-20 right-5 bg-teal-500 hover:bg-teal-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition duration-150 ease-in-out">
+            <button onclick="navigateTo('addTransacaoScreen')"
+                class="fixed bottom-20 right-5 bg-teal-500 hover:bg-teal-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition duration-150 ease-in-out">
                 <i data-feather="plus" class="w-7 h-7"></i>
             </button>
             <nav class="bottom-nav grid grid-cols-5 gap-1 bg-white p-3 border-t border-gray-200">
-                <button onclick="navigateTo('homeJovemScreen')" class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                <button onclick="navigateTo('homeJovemScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
                     <i data-feather="home"></i><span class="text-xs mt-1">Home</span>
                 </button>
-                <button onclick="navigateTo('metasScreen')" class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                <button onclick="navigateTo('metasScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
                     <i data-feather="target"></i><span class="text-xs mt-1">Metas</span>
                 </button>
-                <button onclick="navigateTo('transacoesScreen')" class="flex flex-col items-center text-purple-600 hover:text-purple-800 transition-colors">
+                <button onclick="navigateTo('transacoesScreen')"
+                    class="flex flex-col items-center text-purple-600 hover:text-purple-800 transition-colors">
                     <i data-feather="list"></i><span class="text-xs mt-1">Transações</span>
                 </button>
-                <button onclick="navigateTo('desafiosJovemScreen')" class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                <button onclick="navigateTo('desafiosJovemScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
                     <i data-feather="award"></i><span class="text-xs mt-1">Desafios</span>
                 </button>
-                <button onclick="navigateTo('perfilScreen')" class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                <button onclick="navigateTo('perfilScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
                     <i data-feather="user"></i><span class="text-xs mt-1">Perfil</span>
                 </button>
             </nav>
@@ -296,38 +375,47 @@
             <header class="bg-yellow-500 text-white p-5 flex items-center justify-between shadow-md">
                 <button onclick="goBack()" class="text-white"><i data-feather="arrow-left"></i></button>
                 <h1 class="text-xl font-semibold">Meus Desafios</h1>
-                <div></div> </header>
+                <div></div>
+            </header>
             <div class="flex border-b border-gray-200 bg-white">
-                <button id="abaDesafiosAtivos" onclick="switchDesafioTab('ativos')" class="flex-1 p-3 text-center font-medium text-yellow-600 border-b-2 border-yellow-500">Ativos</button>
-                <button id="abaDesafiosConcluidos" onclick="switchDesafioTab('concluidos')" class="flex-1 p-3 text-center font-medium text-gray-500 hover:text-yellow-600">Concluídos</button>
+                <button id="abaDesafiosAtivos" onclick="switchDesafioTab('ativos')"
+                    class="flex-1 p-3 text-center font-medium text-yellow-600 border-b-2 border-yellow-500">Ativos</button>
+                <button id="abaDesafiosConcluidos" onclick="switchDesafioTab('concluidos')"
+                    class="flex-1 p-3 text-center font-medium text-gray-500 hover:text-yellow-600">Concluídos</button>
             </div>
             <main class="flex-grow p-5 overflow-y-auto custom-scrollbar bg-gray-50">
                 <div id="desafiosAtivosContent" class="space-y-4">
                     <div class="bg-white p-4 rounded-xl shadow-lg">
                         <div class="flex justify-between items-start">
                             <h3 class="font-semibold text-lg text-yellow-700">Economia Semanal</h3>
-                            <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full flex items-center"><i data-feather="zap" class="w-3 h-3 mr-1"></i>100 pts</span>
+                            <span
+                                class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full flex items-center"><i
+                                    data-feather="zap" class="w-3 h-3 mr-1"></i>100 pts</span>
                         </div>
                         <p class="text-sm text-gray-600 my-2">Poupe R$ 20 esta semana em lanches e doces.</p>
                         <div class="flex items-center justify-between">
                             <span class="text-xs text-gray-500">Recompensa: Badge "Mão de Vaca Feliz" 🐮</span>
-                            <button class="bg-yellow-500 hover:bg-yellow-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition">Participar</button>
+                            <button
+                                class="bg-yellow-500 hover:bg-yellow-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition">Participar</button>
                         </div>
                     </div>
-                     <div class="bg-white p-4 rounded-xl shadow-lg">
+                    <div class="bg-white p-4 rounded-xl shadow-lg">
                         <div class="flex justify-between items-start">
                             <h3 class="font-semibold text-lg text-yellow-700">Quiz Financeiro Rápido</h3>
-                             <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full flex items-center"><i data-feather="zap" class="w-3 h-3 mr-1"></i>50 pts</span>
+                            <span
+                                class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full flex items-center"><i
+                                    data-feather="zap" class="w-3 h-3 mr-1"></i>50 pts</span>
                         </div>
                         <p class="text-sm text-gray-600 my-2">Acerte 5 perguntas sobre juros compostos.</p>
-                         <div class="flex items-center justify-between">
+                        <div class="flex items-center justify-between">
                             <span class="text-xs text-gray-500">Recompensa: Badge "Einstein das Finanças" 💡</span>
-                            <button class="bg-yellow-500 hover:bg-yellow-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition">Participar</button>
+                            <button
+                                class="bg-yellow-500 hover:bg-yellow-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition">Participar</button>
                         </div>
                     </div>
                 </div>
                 <div id="desafiosConcluidosContent" class="hidden space-y-4">
-                     <div class="bg-white p-4 rounded-xl shadow-lg opacity-75">
+                    <div class="bg-white p-4 rounded-xl shadow-lg opacity-75">
                         <div class="flex justify-between items-center">
                             <h3 class="font-semibold text-lg text-gray-500">Desafio da Poupança Inicial</h3>
                             <span class="text-3xl">🏅</span>
@@ -338,19 +426,24 @@
                 </div>
             </main>
             <nav class="bottom-nav grid grid-cols-5 gap-1 bg-white p-3 border-t border-gray-200">
-                <button onclick="navigateTo('homeJovemScreen')" class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                <button onclick="navigateTo('homeJovemScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
                     <i data-feather="home"></i><span class="text-xs mt-1">Home</span>
                 </button>
-                <button onclick="navigateTo('metasScreen')" class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                <button onclick="navigateTo('metasScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
                     <i data-feather="target"></i><span class="text-xs mt-1">Metas</span>
                 </button>
-                <button onclick="navigateTo('transacoesScreen')" class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                <button onclick="navigateTo('transacoesScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
                     <i data-feather="list"></i><span class="text-xs mt-1">Transações</span>
                 </button>
-                <button onclick="navigateTo('desafiosJovemScreen')" class="flex flex-col items-center text-yellow-500 hover:text-yellow-700 transition-colors">
+                <button onclick="navigateTo('desafiosJovemScreen')"
+                    class="flex flex-col items-center text-yellow-500 hover:text-yellow-700 transition-colors">
                     <i data-feather="award"></i><span class="text-xs mt-1">Desafios</span>
                 </button>
-                <button onclick="navigateTo('perfilScreen')" class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                <button onclick="navigateTo('perfilScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
                     <i data-feather="user"></i><span class="text-xs mt-1">Perfil</span>
                 </button>
             </nav>
@@ -358,11 +451,13 @@
 
         <div id="desafiosProfessorScreen" class="screen flex-col h-full">
             <header class="bg-green-600 text-white p-5 flex items-center justify-between shadow-md">
-                 <button onclick="goBack()" class="text-white"><i data-feather="arrow-left"></i></button>
+                <button onclick="goBack()" class="text-white"><i data-feather="arrow-left"></i></button>
                 <h1 class="text-xl font-semibold">Gerenciar Desafios</h1>
-                <div></div> </header>
+                <div></div>
+            </header>
             <main class="flex-grow p-5 overflow-y-auto custom-scrollbar bg-gray-50">
-                <button id="btnCriarDesafioProfessor" onclick="openModal('criarDesafioModal')" class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold p-3 rounded-lg mb-6 transition duration-150 ease-in-out flex items-center justify-center">
+                <button id="btnCriarDesafioProfessor" onclick="openModal('criarDesafioModal')"
+                    class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold p-3 rounded-lg mb-6 transition duration-150 ease-in-out flex items-center justify-center">
                     <i data-feather="plus-circle" class="mr-2"></i> Criar Novo Desafio
                 </button>
                 <h2 class="text-lg font-semibold text-gray-700 mb-3">Desafios Ativos</h2>
@@ -373,30 +468,36 @@
                         <div class="bg-green-500 h-2.5 rounded-full" style="width: 60%"></div>
                     </div>
                     <div class="mt-3 flex justify-end space-x-2">
-                        <button class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-md hover:bg-blue-200">Ver Detalhes</button>
-                        <button class="text-xs bg-red-100 text-red-700 px-3 py-1 rounded-md hover:bg-red-200">Encerrar</button>
+                        <button class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-md hover:bg-blue-200">Ver
+                            Detalhes</button>
+                        <button
+                            class="text-xs bg-red-100 text-red-700 px-3 py-1 rounded-md hover:bg-red-200">Encerrar</button>
                     </div>
                 </div>
-                 <div class="bg-white p-4 rounded-xl shadow-lg">
+                <div class="bg-white p-4 rounded-xl shadow-lg">
                     <h3 class="font-semibold text-md text-green-700 mb-1">Quiz Financeiro - Turma 8B</h3>
                     <p class="text-sm text-gray-600 mb-2">Progresso: 20 de 22 alunos concluíram.</p>
                     <div class="w-full bg-gray-200 rounded-full h-2.5">
                         <div class="bg-green-500 h-2.5 rounded-full" style="width: 90%"></div>
                     </div>
-                     <div class="mt-3 flex justify-end space-x-2">
-                        <button class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-md hover:bg-blue-200">Ver Detalhes</button>
+                    <div class="mt-3 flex justify-end space-x-2">
+                        <button class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-md hover:bg-blue-200">Ver
+                            Detalhes</button>
                         <button class="text-xs bg-gray-200 text-gray-600 px-3 py-1 rounded-md">Concluído</button>
                     </div>
                 </div>
             </main>
             <nav class="bottom-nav grid grid-cols-3 gap-1 bg-white p-3 border-t border-gray-200">
-                <button onclick="navigateTo('homeProfessorScreen')" class="flex flex-col items-center text-gray-500 hover:text-purple-600 transition-colors">
+                <button onclick="navigateTo('homeProfessorScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-purple-600 transition-colors">
                     <i data-feather="home"></i><span class="text-xs mt-1">Home</span>
                 </button>
-                <button onclick="navigateTo('desafiosProfessorScreen')" class="flex flex-col items-center text-green-600 hover:text-green-800 transition-colors">
+                <button onclick="navigateTo('desafiosProfessorScreen')"
+                    class="flex flex-col items-center text-green-600 hover:text-green-800 transition-colors">
                     <i data-feather="edit-3"></i><span class="text-xs mt-1">Gerenciar Desafios</span>
                 </button>
-                <button onclick="navigateTo('perfilScreen')" class="flex flex-col items-center text-gray-500 hover:text-purple-600 transition-colors">
+                <button onclick="navigateTo('perfilScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-purple-600 transition-colors">
                     <i data-feather="user"></i><span class="text-xs mt-1">Perfil</span>
                 </button>
             </nav>
@@ -404,14 +505,18 @@
 
         <div id="perfilScreen" class="screen flex-col h-full bg-gray-50">
             <header class="bg-gradient-to-r from-cyan-500 to-blue-500 text-white p-5 shadow-md text-center relative">
-                 <button onclick="goBack()" class="absolute top-5 left-5 text-white"><i data-feather="arrow-left"></i></button>
-                 <div class="relative cursor-pointer" onclick="document.getElementById('avatarUpload').click();">
-        <img id="perfilAvatarImg" src="https://placehold.co/100x100/E2E8F0/4A5568?text=User" alt="Foto do Usuário" class="w-24 h-24 rounded-full mx-auto mb-3 border-4 border-white shadow-lg">
-        <div class="absolute bottom-3 right-[calc(50%-2.5rem)] bg-gray-800 bg-opacity-60 p-1.5 rounded-full">
-            <i data-feather="edit-2" class="w-4 h-4 text-white"></i>
-        </div>
-    </div>
-    <input type="file" id="avatarUpload" class="hidden" accept="image/png, image/jpeg">
+                <button onclick="goBack()" class="absolute top-5 left-5 text-white"><i
+                        data-feather="arrow-left"></i></button>
+                <div class="relative cursor-pointer" onclick="document.getElementById('avatarUpload').click();">
+                    <img id="perfilAvatarImg" src="https://placehold.co/100x100/E2E8F0/4A5568?text=User"
+                        alt="Foto do Usuário"
+                        class="w-24 h-24 rounded-full mx-auto mb-3 border-4 border-white shadow-lg">
+                    <div
+                        class="absolute bottom-3 right-[calc(50%-2.5rem)] bg-gray-800 bg-opacity-60 p-1.5 rounded-full">
+                        <i data-feather="edit-2" class="w-4 h-4 text-white"></i>
+                    </div>
+                </div>
+                <input type="file" id="avatarUpload" class="hidden" accept="image/png, image/jpeg">
                 <h2 id="perfilNome" class="text-2xl font-semibold">Nome do Usuário</h2>
                 <p id="perfilTipoUsuario" class="text-sm opacity-90">Jovem</p>
             </header>
@@ -431,46 +536,58 @@
                             <span class="text-4xl">💡</span>
                             <p class="text-xs text-gray-600 mt-1">Expert em Quiz</p>
                         </div>
-                         <div class="bg-white p-3 rounded-lg shadow hover:shadow-md transition-shadow">
+                        <div class="bg-white p-3 rounded-lg shadow hover:shadow-md transition-shadow">
                             <span class="text-4xl">🏆</span>
                             <p class="text-xs text-gray-600 mt-1">Rei da Economia</p>
                         </div>
                     </div>
                 </section>
-                <button class="w-full flex items-center justify-between bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow mb-3 text-gray-700">
+                <button
+                    class="w-full flex items-center justify-between bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow mb-3 text-gray-700">
                     <span><i data-feather="settings" class="inline-block mr-2 text-blue-500"></i> Configurações</span>
                     <i data-feather="chevron-right" class="text-gray-400"></i>
                 </button>
-                <button onclick="logout()" class="w-full flex items-center justify-between bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow text-red-500">
-                     <span><i data-feather="log-out" class="inline-block mr-2"></i> Sair</span>
-                     <i data-feather="chevron-right" class="text-gray-400"></i>
+                <button onclick="logout()"
+                    class="w-full flex items-center justify-between bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow text-red-500">
+                    <span><i data-feather="log-out" class="inline-block mr-2"></i> Sair</span>
+                    <i data-feather="chevron-right" class="text-gray-400"></i>
                 </button>
             </main>
-            <nav id="perfilBottomNavJovem" class="bottom-nav grid grid-cols-5 gap-1 bg-white p-3 border-t border-gray-200">
-                 <button onclick="navigateTo('homeJovemScreen')" class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
+            <nav id="perfilBottomNavJovem"
+                class="bottom-nav grid grid-cols-5 gap-1 bg-white p-3 border-t border-gray-200">
+                <button onclick="navigateTo('homeJovemScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
                     <i data-feather="home"></i><span class="text-xs mt-1">Home</span>
                 </button>
-                <button onclick="navigateTo('metasScreen')" class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                <button onclick="navigateTo('metasScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
                     <i data-feather="target"></i><span class="text-xs mt-1">Metas</span>
                 </button>
-                <button onclick="navigateTo('transacoesScreen')" class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                <button onclick="navigateTo('transacoesScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
                     <i data-feather="list"></i><span class="text-xs mt-1">Transações</span>
                 </button>
-                <button onclick="navigateTo('desafiosJovemScreen')" class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                <button onclick="navigateTo('desafiosJovemScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
                     <i data-feather="award"></i><span class="text-xs mt-1">Desafios</span>
                 </button>
-                <button onclick="navigateTo('perfilScreen')" class="flex flex-col items-center text-blue-500 hover:text-blue-700 transition-colors">
+                <button onclick="navigateTo('perfilScreen')"
+                    class="flex flex-col items-center text-blue-500 hover:text-blue-700 transition-colors">
                     <i data-feather="user"></i><span class="text-xs mt-1">Perfil</span>
                 </button>
             </nav>
-            <nav id="perfilBottomNavProfessor" class="bottom-nav grid grid-cols-3 gap-1 bg-white p-3 border-t border-gray-200" style="display: none;">
-                <button onclick="navigateTo('homeProfessorScreen')" class="flex flex-col items-center text-gray-500 hover:text-purple-600 transition-colors">
+            <nav id="perfilBottomNavProfessor"
+                class="bottom-nav grid grid-cols-3 gap-1 bg-white p-3 border-t border-gray-200" style="display: none;">
+                <button onclick="navigateTo('homeProfessorScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-purple-600 transition-colors">
                     <i data-feather="home"></i><span class="text-xs mt-1">Home</span>
                 </button>
-                <button onclick="navigateTo('desafiosProfessorScreen')" class="flex flex-col items-center text-gray-500 hover:text-purple-600 transition-colors">
+                <button onclick="navigateTo('desafiosProfessorScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-purple-600 transition-colors">
                     <i data-feather="edit-3"></i><span class="text-xs mt-1">Gerenciar Desafios</span>
                 </button>
-                <button onclick="navigateTo('perfilScreen')" class="flex flex-col items-center text-blue-500 hover:text-blue-700 transition-colors">
+                <button onclick="navigateTo('perfilScreen')"
+                    class="flex flex-col items-center text-blue-500 hover:text-blue-700 transition-colors">
                     <i data-feather="user"></i><span class="text-xs mt-1">Perfil</span>
                 </button>
             </nav>
@@ -480,100 +597,124 @@
             <header class="bg-teal-600 text-white p-5 flex items-center justify-between shadow-md">
                 <button onclick="goBack()" class="text-white"><i data-feather="arrow-left"></i></button>
                 <h1 class="text-xl font-semibold">Simulador de Investimentos</h1>
-                <div></div> </header>
+                <div></div>
+            </header>
             <main class="flex-grow p-5 overflow-y-auto custom-scrollbar bg-gray-50">
                 <div class="bg-white p-4 rounded-xl shadow-lg mb-5">
                     <h3 class="font-semibold text-lg text-teal-700 mb-3">Compare Rendimentos</h3>
                     <div class="mb-4">
-                        <label for="valorInicial" class="block text-sm font-medium text-gray-700 mb-1">Valor Inicial (R$):</label>
-                        <input type="number" id="valorInicial" value="1000" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500">
+                        <label for="valorInicial" class="block text-sm font-medium text-gray-700 mb-1">Valor Inicial
+                            (R$):</label>
+                        <input type="number" id="valorInicial" value="1000"
+                            class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500">
                     </div>
                     <div class="mb-4">
-                        <label for="aporteMensal" class="block text-sm font-medium text-gray-700 mb-1">Aporte Mensal (R$):</label>
-                        <input type="number" id="aporteMensal" value="100" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500">
+                        <label for="aporteMensal" class="block text-sm font-medium text-gray-700 mb-1">Aporte Mensal
+                            (R$):</label>
+                        <input type="number" id="aporteMensal" value="100"
+                            class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500">
                     </div>
                     <div class="mb-4">
-                        <label for="periodoAnos" class="block text-sm font-medium text-gray-700 mb-1">Período (Anos):</label>
-                        <input type="number" id="periodoAnos" value="5" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500">
+                        <label for="periodoAnos" class="block text-sm font-medium text-gray-700 mb-1">Período
+                            (Anos):</label>
+                        <input type="number" id="periodoAnos" value="5"
+                            class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500">
                     </div>
-                    <button onclick="simularInvestimento()" class="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold p-3 rounded-lg transition">Simular</button>
+                    <button onclick="simularInvestimento()"
+                        class="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold p-3 rounded-lg transition">Simular</button>
                 </div>
 
                 <div class="bg-white p-4 rounded-xl shadow-lg">
                     <h4 class="font-semibold text-md text-teal-700 mb-2">Resultado da Simulação:</h4>
-                    <p class="text-sm text-gray-600 mb-1">Poupança (0.5% a.m.): <span id="resultadoPoupanca" class="font-bold text-gray-800">R$ 0,00</span></p>
-                    <p class="text-sm text-gray-600">Ações (Estimativa 1% a.m.): <span id="resultadoAcoes" class="font-bold text-gray-800">R$ 0,00</span></p>
+                    <p class="text-sm text-gray-600 mb-1">Poupança (0.5% a.m.): <span id="resultadoPoupanca"
+                            class="font-bold text-gray-800">R$ 0,00</span></p>
+                    <p class="text-sm text-gray-600">Ações (Estimativa 1% a.m.): <span id="resultadoAcoes"
+                            class="font-bold text-gray-800">R$ 0,00</span></p>
                     <div class="mt-4 h-64 bg-gray-200 rounded-lg flex items-center justify-center">
                         <p class="text-gray-500">Gráfico Interativo Aqui</p>
-                        </div>
+                    </div>
                 </div>
             </main>
-             <nav class="bottom-nav grid grid-cols-5 gap-1 bg-white p-3 border-t border-gray-200">
-                <button onclick="navigateTo('homeJovemScreen')" class="flex flex-col items-center text-teal-600 hover:text-teal-800 transition-colors"> <i data-feather="home"></i><span class="text-xs mt-1">Home</span>
+            <nav class="bottom-nav grid grid-cols-5 gap-1 bg-white p-3 border-t border-gray-200">
+                <button onclick="navigateTo('homeJovemScreen')"
+                    class="flex flex-col items-center text-teal-600 hover:text-teal-800 transition-colors"> <i
+                        data-feather="home"></i><span class="text-xs mt-1">Home</span>
                 </button>
-                <button onclick="navigateTo('metasScreen')" class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                <button onclick="navigateTo('metasScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
                     <i data-feather="target"></i><span class="text-xs mt-1">Metas</span>
                 </button>
-                <button onclick="navigateTo('transacoesScreen')" class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                <button onclick="navigateTo('transacoesScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
                     <i data-feather="list"></i><span class="text-xs mt-1">Transações</span>
                 </button>
-                <button onclick="navigateTo('desafiosJovemScreen')" class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                <button onclick="navigateTo('desafiosJovemScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
                     <i data-feather="award"></i><span class="text-xs mt-1">Desafios</span>
                 </button>
-                <button onclick="navigateTo('perfilScreen')" class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                <button onclick="navigateTo('perfilScreen')"
+                    class="flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors">
                     <i data-feather="user"></i><span class="text-xs mt-1">Perfil</span>
                 </button>
             </nav>
         </div>
 
-        
-<div id="addTransacaoScreen" class="screen flex-col h-full bg-gray-50">
-    <header class="bg-teal-600 text-white p-5 flex items-center justify-between shadow-md">
-        <button onclick="goBack()" class="text-white"><i data-feather="arrow-left"></i></button>
-        <h1 class="text-xl font-semibold">Adicionar Nova Transação</h1>
-        <div></div> 
-    </header>
-    <main class="flex-grow p-5 overflow-y-auto custom-scrollbar space-y-5">
-        <div>
-            <label for="transacaoDescricao" class="block text-sm font-medium text-gray-700 mb-1">Descrição</label>
-            <input type="text" id="transacaoDescricao" placeholder="Ex: Lanche da tarde" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 outline-none">
+
+        <div id="addTransacaoScreen" class="screen flex-col h-full bg-gray-50">
+            <header class="bg-teal-600 text-white p-5 flex items-center justify-between shadow-md">
+                <button onclick="goBack()" class="text-white"><i data-feather="arrow-left"></i></button>
+                <h1 class="text-xl font-semibold">Adicionar Nova Transação</h1>
+                <div></div>
+            </header>
+            <main class="flex-grow p-5 overflow-y-auto custom-scrollbar space-y-5">
+                <div>
+                    <label for="transacaoDescricao"
+                        class="block text-sm font-medium text-gray-700 mb-1">Descrição</label>
+                    <input type="text" id="transacaoDescricao" placeholder="Ex: Lanche da tarde"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 outline-none">
+                </div>
+                <div>
+                    <label for="transacaoValor" class="block text-sm font-medium text-gray-700 mb-1">Valor (R$)</label>
+                    <input type="number" id="transacaoValor" placeholder="0.00" step="0.01"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 outline-none">
+                </div>
+                <div>
+                    <label for="transacaoTipo" class="block text-sm font-medium text-gray-700 mb-1">Tipo</label>
+                    <select id="transacaoTipo"
+                        class="w-full p-3 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-teal-500 outline-none">
+                        <option value="gasto">Gasto (-)</option>
+                        <option value="recebimento">Recebimento (+)</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="transacaoCategoria"
+                        class="block text-sm font-medium text-gray-700 mb-1">Categoria</label>
+                    <select id="transacaoCategoria"
+                        class="w-full p-3 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-teal-500 outline-none">
+                        <option value="alimentacao">🍔 Alimentação</option>
+                        <option value="transporte">🚌 Transporte</option>
+                        <option value="lazer">🎉 Lazer</option>
+                        <option value="moradia">🏠 Moradia</option>
+                        <option value="educacao">📚 Educação</option>
+                        <option value="saude">❤️ Saúde</option>
+                        <option value="mesada">💰 Mesada/Salário</option>
+                        <option value="presente">🎁 Presente</option>
+                        <option value="investimento">📈 Investimento</option>
+                        <option value="outros">📎 Outros</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="transacaoData" class="block text-sm font-medium text-gray-700 mb-1">Data</label>
+                    <input type="date" id="transacaoData"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 outline-none">
+                </div>
+                <button onclick="addNovaTransacao()"
+                    class="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold p-3.5 rounded-lg transition duration-150 ease-in-out mt-2">
+                    Salvar Transação
+                </button>
+            </main>
+
         </div>
-        <div>
-            <label for="transacaoValor" class="block text-sm font-medium text-gray-700 mb-1">Valor (R$)</label>
-            <input type="number" id="transacaoValor" placeholder="0.00" step="0.01" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 outline-none">
-        </div>
-        <div>
-            <label for="transacaoTipo" class="block text-sm font-medium text-gray-700 mb-1">Tipo</label>
-            <select id="transacaoTipo" class="w-full p-3 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-teal-500 outline-none">
-                <option value="gasto">Gasto (-)</option>
-                <option value="recebimento">Recebimento (+)</option>
-            </select>
-        </div>
-        <div>
-            <label for="transacaoCategoria" class="block text-sm font-medium text-gray-700 mb-1">Categoria</label>
-            <select id="transacaoCategoria" class="w-full p-3 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-teal-500 outline-none">
-                <option value="alimentacao">🍔 Alimentação</option>
-                <option value="transporte">🚌 Transporte</option>
-                <option value="lazer">🎉 Lazer</option>
-                <option value="moradia">🏠 Moradia</option>
-                <option value="educacao">📚 Educação</option>
-                <option value="saude">❤️ Saúde</option>
-                <option value="mesada">💰 Mesada/Salário</option>
-                <option value="presente">🎁 Presente</option>
-                <option value="investimento">📈 Investimento</option>
-                <option value="outros">📎 Outros</option>
-            </select>
-        </div>
-        <div>
-            <label for="transacaoData" class="block text-sm font-medium text-gray-700 mb-1">Data</label>
-            <input type="date" id="transacaoData" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 outline-none">
-        </div>
-        <button onclick="addNovaTransacao()" class="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold p-3.5 rounded-lg transition duration-150 ease-in-out mt-2">
-            Salvar Transação
-        </button>
-    </main>
-    
-</div>
 
         <div id="forgotPasswordModal" class="modal-overlay">
             <div class="modal-content">
@@ -584,50 +725,56 @@
                     </button>
                 </div>
                 <p class="text-gray-600 mb-4 text-sm">Digite seu e-mail para enviarmos um link de recuperação.</p>
-                <input type="email" placeholder="Seu e-mail" class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
-                <button onclick="sendRecoveryLink()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold p-3 rounded-lg transition">Enviar Link</button>
+                <input type="email" placeholder="Seu e-mail"
+                    class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
+                <button onclick="sendRecoveryLink()"
+                    class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold p-3 rounded-lg transition">Enviar
+                    Link</button>
             </div>
         </div>
 
         <div id="criarDesafioModal" class="modal-overlay">
             <div class="modal-content">
-                 <div class="flex justify-between items-center mb-6">
+                <div class="flex justify-between items-center mb-6">
                     <h3 class="text-xl font-semibold text-green-700">Criar Novo Desafio</h3>
                     <button onclick="closeModal('criarDesafioModal')" class="text-gray-500 hover:text-gray-700">
                         <i data-feather="x" class="w-6 h-6"></i>
                     </button>
                 </div>
-                <input type="text" placeholder="Título do Desafio" class="w-full p-3 mb-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500">
-                <textarea placeholder="Descrição do Desafio" rows="3" class="w-full p-3 mb-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"></textarea>
-                <input type="number" placeholder="Pontuação" class="w-full p-3 mb-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500">
-                <input type="text" placeholder="Badge de Recompensa (ex: Mestre da Economia)" class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500">
-                 <select class="w-full p-3 mb-4 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-green-500">
+                <input type="text" placeholder="Título do Desafio"
+                    class="w-full p-3 mb-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500">
+                <textarea placeholder="Descrição do Desafio" rows="3"
+                    class="w-full p-3 mb-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"></textarea>
+                <input type="number" placeholder="Pontuação"
+                    class="w-full p-3 mb-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500">
+                <input type="text" placeholder="Badge de Recompensa (ex: Mestre da Economia)"
+                    class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500">
+                <select
+                    class="w-full p-3 mb-4 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-green-500">
                     <option value="">Atribuir à Turma (Opcional)</option>
                     <option value="7a">Turma 7º Ano A</option>
                     <option value="8b">Turma 8º Ano B</option>
                     <option value="9c">Turma 9º Ano C</option>
                 </select>
-                <button onclick="criarDesafioProfessor()" class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold p-3 rounded-lg transition">Criar Desafio</button>
+                <button onclick="criarDesafioProfessor()"
+                    class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold p-3 rounded-lg transition">Criar
+                    Desafio</button>
             </div>
         </div>
 
-         <div id="successMessageModal" class="modal-overlay">
+        <div id="successMessageModal" class="modal-overlay">
             <div class="modal-content text-center">
                 <i data-feather="check-circle" class="w-16 h-16 text-green-500 mx-auto mb-4"></i>
                 <h3 id="successMessageTitle" class="text-xl font-semibold text-gray-800 mb-2">Sucesso!</h3>
                 <p id="successMessageText" class="text-gray-600 mb-6">Sua ação foi completada.</p>
-                <button onclick="closeModal('successMessageModal')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-lg transition">OK</button>
+                <button onclick="closeModal('successMessageModal')"
+                    class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-lg transition">OK</button>
             </div>
         </div>
 
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> <script>
-        const supabaseUrl = 'https://cksatcipdkyhjvirjcrh.supabase.co'; 
-        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNrc2F0Y2lwZGt5aGp2aXJqY3JoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDg3MDQ1NzIsImV4cCI6MjA2NDI4MDU3Mn0.UN2BV7LPLa1DyQIFmSK0ay1M0sihKbx1tFL5rFR3YdY'; // Sua chave Anon
-
-        window.supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
-    </script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script> 
     <script src="script.js"></script>
 </body>
 </html>
