@@ -1,3 +1,5 @@
+const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
 let currentUserType = "jovem";
 let currentUserName = "Jovem Usuário";
 let navigationHistory = ["splashScreen"];
